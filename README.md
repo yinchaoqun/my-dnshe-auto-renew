@@ -17,11 +17,51 @@
 - `DNSHE_API_KEY`
 - `DNSHE_API_SECRET`
 
-### 第 1 步：把本目录放进你自己的 GitHub 私有仓库
+### 第 1 步：把本仓库转成私有仓库
 
-新建一个 GitHub 私有仓库，然后把本目录内容复制进去。
+**推荐使用「路线 A：GitHub Importer 导入」**，不用手动搬文件。
 
-为什么建议私有仓库：
+| 路线 | 推荐程度 | 适合谁 |
+| --- | --- | --- |
+| **路线 A：GitHub Importer 导入** | **推荐** | 所有人。全程在浏览器里操作 |
+| 路线 B：下载 ZIP + 复制粘贴 | 仅备选 | 所有人。 |
+
+> **两条路线只选一条。** 默认走路线 A；只有你明确想手动复制文件时，再考虑路线 B。
+
+#### 路线 A：GitHub Importer 导入（推荐）
+
+**A-1. 打开 GitHub Importer**
+
+1. 登录 GitHub。
+2. 打开：<https://github.com/new/import>
+
+**A-2. 填写导入信息**
+
+| 字段 | 填什么 |
+| --- | --- |
+| `Your old repository's clone URL` | `https://github.com/OUBIGFA/dnshe-auto-renew` |
+| `Owner` | 你的 GitHub 账号 |
+| `Repository name` | 你的仓库名，例如 `my-dnshe-auto-renew` |
+| `Privacy` | 选 `Private` |
+
+然后点击 `Begin import`，通常几十秒到几分钟会完成。
+
+**A-3. 进入你导入后的私有仓库**
+
+导入完成后，GitHub 会生成一个属于你自己的私有仓库。后面的 Secret、Variable 和 workflow 都直接在这个仓库的网页里设置即可。
+
+继续看「第 2 步」。
+
+<details>
+<summary><b>路线 B：下载 ZIP + 复制粘贴（备用手动方案） - 点击展开</b></summary>
+
+<br>
+
+如果你不想使用 GitHub Importer，也可以手动操作：先在 GitHub 新建一个 `Private` 仓库，再从原项目 <https://github.com/OUBIGFA/dnshe-auto-renew> 点击 `Code` -> `Download ZIP` 下载源码，解压后把里面的文件复制到你自己的私有仓库里。
+
+</details>
+
+为什么要私有仓库：
 
 - `DNSHE_DOMAINS` 会暴露你管理的域名列表
 - `state/domains-state.json` 会记录已知到期时间
