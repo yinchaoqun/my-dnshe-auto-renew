@@ -17,25 +17,10 @@ Prepare these two values:
 - `DNSHE_API_KEY`
 - `DNSHE_API_SECRET`
 
-### Step 1: turn this repository into your own private repository
+### Step 1: import with GitHub Importer as a private repository
 
-**Use Route A: GitHub Importer as the recommended method.** It avoids manually moving files.
-
-| Route | Recommendation | Best for |
-| --- | --- | --- |
-| **Route A: import with GitHub Importer** | **Recommended** | Everyone. Everything happens in the browser |
-| Route B: download ZIP + copy and paste | Backup only | Everyone. |
-
-> **Choose only one route.** Use Route A by default; consider Route B only if you explicitly want to copy files manually.
-
-#### Route A: import with GitHub Importer (recommended)
-
-**A-1. Open GitHub Importer**
-
-1. Log in to GitHub.
-2. Open: <https://github.com/new/import>
-
-**A-2. Fill in the import form**
+1. Log in to GitHub, then open <https://github.com/new/import>
+2. Fill in the import form:
 
 | Field | Value |
 | --- | --- |
@@ -44,28 +29,8 @@ Prepare these two values:
 | `Repository name` | Your repository name, for example `my-dnshe-auto-renew` |
 | `Privacy` | Select `Private` |
 
-Then click `Begin import`. It usually finishes in a few seconds to a few minutes.
-
-**A-3. Open your imported private repository**
-
-After the import finishes, GitHub will create a private repository under your own account. The secrets, variable, and workflow in the next steps can all be configured directly on that repository's GitHub page.
-
-Continue to "Step 2".
-
-<details>
-<summary><b>Route B: download ZIP + copy and paste (backup manual method) - click to expand</b></summary>
-
-<br>
-
-If you do not want to use GitHub Importer, you can do it manually: create a new `Private` repository on GitHub, then open the original project <https://github.com/OUBIGFA/dnshe-auto-renew>, click `Code` -> `Download ZIP`, extract the source code, and copy the files into your own private repository.
-
-</details>
-
-Why use a private repository:
-
-- `DNSHE_DOMAINS` shows which domains you manage
-- `state/domains-state.json` stores known expiration times
-- those are operational details and are better kept private
+3. Click `Begin import` and wait for the import to finish (usually a few seconds to a few minutes)
+4. After import, GitHub creates a private repository under your account. All secrets, variables, and workflow settings are configured on that repository's page
 
 ### Step 2: add 2 secrets and 1 variable in GitHub
 
